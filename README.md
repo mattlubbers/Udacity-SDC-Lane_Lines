@@ -26,6 +26,7 @@ The perception pipeline consists of:
 
 
 **Grayscale Filtering and Gaussian Blur**
+
 Apply a Grayscale transform, and a Gaussian Noise Kernel using the OpenCV library:
 ```
 def grayscale(img):
@@ -34,7 +35,7 @@ def grayscale(img):
 def gaussian_blur(img, kernel_size):
     return cv2.GaussianBlur(img, (kernel_size, kernel_size), 0)
 ```
-Image of Grayscale and Gaussian Blur:
+
 ![grayGaussian](/assets/grayGaussian.png)
 
 **Canny Edges**
@@ -47,6 +48,7 @@ def canny(img, low_threshold, high_threshold):
 ip_canny = canny(ip_gaussian, 60, 120)
 ```
 To determine the proper canny edge parameters, the image was processed with multiple parameters, and plotted in an output grid for easy comparison [(10,30) , (30,90) , (50,150) , (60,120)]:
+
 ![canny](/assets/canny.png)
 
 **Verticies Mask**
@@ -122,6 +124,7 @@ def hough_lines(img, rho, theta, threshold, min_line_len, max_line_gap):
 ![hough](/assets/hough.png)
 
 **Hough Lines on Input Image Overlay**
+
 Overlay the processed image ontop of the input image with a specified alpha and beta parameter:
 ```
 def weighted_img(img, initial_img, α=0.8, β=1., γ=0.):
@@ -129,14 +132,12 @@ def weighted_img(img, initial_img, α=0.8, β=1., γ=0.):
 ```
 ![final](/assets/final.png)
 
-After these parameters were tuned, the entire dataset of test images was processed through the perception pipeline to create output images. Furthermore, this perception pipeline was then used to construct weighted lane lines for a continuous video, to indicate the robustness and accuracy of this processing method.
-
-
-The first step is to apply a grayscale filter and a Gaussian Blur to the original input image:
+After these parameters were tuned, the entire dataset of test images was processed through the perception pipeline to create output images. Furthermore, this perception pipeline was then used to construct weighted lane lines for a continuous video, to indicate the robustness and accuracy of this processing method. An example of this video can be found [here](/test_videos_output/solidWhiteRight.mp4).
 
 Reflection
 ---
 **Shortcomings**
+
 The hough lines overlayed with the input images matched fairly well, however they were not a perfect match for thickness, nor the angle alignment. Furthermore, upon playing the video of the continuous image processing, it is clear that the current parameters selected were approximately 80% accurate, and resulted in large angle discrepencies that were unreasonable for lane lines. 
 
 **Possible Improvements**

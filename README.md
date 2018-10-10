@@ -132,7 +132,7 @@ def weighted_img(img, initial_img, α=0.8, β=1., γ=0.):
 ```
 ![final](/assets/final.png)
 
-After these parameters were tuned, the entire dataset of test images was processed through the perception pipeline to create output images. Furthermore, this perception pipeline was then used to construct weighted lane lines for a continuous video, to indicate the robustness and accuracy of this processing method. An example of this video can be found [here](/test_videos_output/solidWhiteRight.mp4).
+After these parameters were tuned, the entire dataset of test images was processed through the perception pipeline to create output images. Furthermore, this perception pipeline was then used to construct weighted lane lines for a continuous video, to indicate the robustness and accuracy of this processing method. Examples of these videos can be found [here](/test_videos_output/).
 
 Reflection
 ---

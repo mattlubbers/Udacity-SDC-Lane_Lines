@@ -12,12 +12,16 @@ This project aims to detect lane lines in pre-selected images using Python and O
 Implementation
 ---
 
-1. Describe the pipeline
+Describe the pipeline
 
 ![grayGaussian](/assets/grayGaussian.PNG)
+
 ![canny](/assets/canny.PNG)
+
 ![mask](/assets/mask.PNG)
+
 ![hough](/assets/hough.PNG)
+
 ![final](/assets/final.PNG)
 
 Reflection
